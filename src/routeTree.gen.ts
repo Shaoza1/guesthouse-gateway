@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RoomsRouteImport } from './routes/rooms'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as AreaRouteImport } from './routes/area'
+import { Route as AmenitiesRouteImport } from './routes/amenities'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoomsRoute = RoomsRouteImport.update({
+  id: '/rooms',
+  path: '/rooms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreaRoute = AreaRouteImport.update({
+  id: '/area',
+  path: '/area',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmenitiesRoute = AmenitiesRouteImport.update({
+  id: '/amenities',
+  path: '/amenities',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/amenities': typeof AmenitiesRoute
+  '/area': typeof AreaRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/rooms': typeof RoomsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/amenities': typeof AmenitiesRoute
+  '/area': typeof AreaRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/rooms': typeof RoomsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/amenities': typeof AmenitiesRoute
+  '/area': typeof AreaRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/rooms': typeof RoomsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/amenities'
+    | '/area'
+    | '/book'
+    | '/contact'
+    | '/gallery'
+    | '/rooms'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/amenities'
+    | '/area'
+    | '/book'
+    | '/contact'
+    | '/gallery'
+    | '/rooms'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/amenities'
+    | '/area'
+    | '/book'
+    | '/contact'
+    | '/gallery'
+    | '/rooms'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmenitiesRoute: typeof AmenitiesRoute
+  AreaRoute: typeof AreaRoute
+  BookRoute: typeof BookRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  RoomsRoute: typeof RoomsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rooms': {
+      id: '/rooms'
+      path: '/rooms'
+      fullPath: '/rooms'
+      preLoaderRoute: typeof RoomsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/area': {
+      id: '/area'
+      path: '/area'
+      fullPath: '/area'
+      preLoaderRoute: typeof AreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amenities': {
+      id: '/amenities'
+      path: '/amenities'
+      fullPath: '/amenities'
+      preLoaderRoute: typeof AmenitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmenitiesRoute: AmenitiesRoute,
+  AreaRoute: AreaRoute,
+  BookRoute: BookRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  RoomsRoute: RoomsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
