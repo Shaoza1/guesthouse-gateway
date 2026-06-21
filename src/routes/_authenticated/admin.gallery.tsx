@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { resolveImageSrc } from "@/lib/assets";
+import { resolveImage } from "@/lib/assets";
 
 export const Route = createFileRoute("/_authenticated/admin/gallery")({
   component: AdminGallery,
@@ -123,7 +123,7 @@ function AdminGallery() {
           >
             <div className="aspect-[4/3] bg-secondary">
               <img
-                src={resolveImageSrc(r.image_url)}
+                src={resolveImage(r.image_url)}
                 alt={r.alt_text}
                 className="h-full w-full object-cover"
               />
