@@ -59,7 +59,7 @@ export function AdminLayout({
             {ADMIN_NAV.map((item) => (
               <Link
                 key={item.to}
-                to={item.to}
+                to={item.to as "/admin"}
                 activeOptions={{ exact: item.exact }}
                 className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
                 activeProps={{ className: "bg-secondary text-foreground" }}
