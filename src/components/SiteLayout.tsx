@@ -139,14 +139,9 @@ function SiteFooter() {
               </Link>
             </li>
             <li>
-              <a
-                href={NIGHTSBRIDGE_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground"
-              >
+              <BookingButton className="hover:text-foreground">
                 Book on Nightsbridge
-              </a>
+              </BookingButton>
             </li>
           </ul>
         </div>
