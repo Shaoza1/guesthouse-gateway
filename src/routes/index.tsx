@@ -12,6 +12,7 @@ import {
 } from "@/lib/content";
 import { resolveImage, heroGarden } from "@/lib/assets";
 import { NIGHTSBRIDGE_BOOKING_URL } from "@/lib/site-config";
+import { BookingButton } from "@/components/BookingButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,14 +98,9 @@ function HomeContent() {
           </h1>
           <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={NIGHTSBRIDGE_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-lg transition hover:opacity-95"
-            >
+            <BookingButton className="inline-flex min-h-11 items-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-lg transition hover:opacity-95">
               {primaryCta}
-            </a>
+            </BookingButton>
             <Link
               to="/rooms"
               className="inline-flex min-h-11 items-center rounded-md border border-white/40 bg-white/10 px-6 py-3 text-base font-medium text-white backdrop-blur transition hover:bg-white/20"
@@ -168,14 +164,9 @@ function HomeContent() {
                 booking partner.
               </p>
             </div>
-            <a
-              href={NIGHTSBRIDGE_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-md bg-accent px-7 py-3 text-base font-semibold text-accent-foreground shadow-md transition hover:opacity-95"
-            >
+            <BookingButton className="inline-flex min-h-12 items-center justify-center rounded-md bg-accent px-7 py-3 text-base font-semibold text-accent-foreground shadow-md transition hover:opacity-95">
               Check availability
-            </a>
+            </BookingButton>
           </div>
         </div>
       </Section>
@@ -204,14 +195,9 @@ function RoomCard({ room }: { room: Room }) {
         </p>
         <p className="mt-3 line-clamp-3 text-sm text-foreground/80">{room.description}</p>
         <div className="mt-4">
-          <a
-            href={NIGHTSBRIDGE_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
-          >
+          <BookingButton className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
             Book this room →
-          </a>
+          </BookingButton>
         </div>
       </div>
     </li>

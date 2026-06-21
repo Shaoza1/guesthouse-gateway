@@ -6,7 +6,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { Section, SectionHeading } from "@/components/Section";
 import { roomsQuery } from "@/lib/content";
 import { resolveImage } from "@/lib/assets";
-import { NIGHTSBRIDGE_BOOKING_URL } from "@/lib/site-config";
+import { BookingButton } from "@/components/BookingButton";
 
 export const Route = createFileRoute("/rooms")({
   head: () => ({
@@ -90,14 +90,9 @@ function RoomList() {
                 ))}
               </ul>
             )}
-            <a
-              href={NIGHTSBRIDGE_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex min-h-11 items-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow transition hover:opacity-95"
-            >
+            <BookingButton className="mt-6 inline-flex min-h-11 items-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow transition hover:opacity-95">
               Book this room
-            </a>
+            </BookingButton>
           </div>
         </li>
       ))}

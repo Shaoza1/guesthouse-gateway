@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
-import { NIGHTSBRIDGE_BOOKING_URL, SITE_NAME } from "@/lib/site-config";
+import { SITE_NAME } from "@/lib/site-config";
+import { BookingButton } from "@/components/BookingButton";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -45,14 +46,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href={NIGHTSBRIDGE_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm transition hover:opacity-95 sm:inline-flex"
-            >
+            <BookingButton className="hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm transition hover:opacity-95 sm:inline-flex">
               Book Now
-            </a>
+            </BookingButton>
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
@@ -87,14 +83,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 </li>
               ))}
               <li className="px-3 py-2">
-                <a
-                  href={NIGHTSBRIDGE_BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full justify-center rounded-md bg-accent px-4 py-3 text-base font-semibold text-accent-foreground"
-                >
+                <BookingButton className="inline-flex w-full justify-center rounded-md bg-accent px-4 py-3 text-base font-semibold text-accent-foreground">
                   Book Now
-                </a>
+                </BookingButton>
               </li>
             </ul>
           </nav>
