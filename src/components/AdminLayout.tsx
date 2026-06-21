@@ -2,13 +2,13 @@ import { Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
-const ADMIN_NAV = [
+const ADMIN_NAV: Array<{ to: string; label: string; exact?: boolean }> = [
   { to: "/admin", label: "Dashboard", exact: true },
   { to: "/admin/rooms", label: "Rooms" },
   { to: "/admin/gallery", label: "Gallery" },
   { to: "/admin/content", label: "Site content" },
   { to: "/admin/inquiries", label: "Inquiries" },
-] as const;
+];
 
 export function AdminLayout({
   children,
