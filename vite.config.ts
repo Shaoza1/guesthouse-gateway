@@ -11,7 +11,9 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  nitro: { preset: "vercel" },
   vite: {
+    resolve: { tsconfigPaths: true },
     plugins: [
       VitePWA({
         registerType: "autoUpdate",
